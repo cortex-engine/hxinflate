@@ -305,7 +305,7 @@ class Deflater {
     }
     for (i in 0...inflater.tcache.length) {
       var type = inflater.tcache[i];
-      if (Std.is(type, serialization.InflatedEnum)) {
+      if (type is serialization.InflatedEnum) {
         var ctype:InflatedEnum = cast type;
         var info = new DeflatedEnum();
         info.name = ctype.name;
@@ -320,7 +320,7 @@ class Deflater {
         deflater.thash.get(mungedName).push(info);
         writeEnumInfo(deflater, info);
       }
-      else if (Std.is(type, InflatedEnumValue)) {
+      else if (type is InflatedEnumValue) {
         var ctype:InflatedEnumValue = cast type;
         var enumType = ctype.enumType;
         var info = new DeflatedEnumValue();

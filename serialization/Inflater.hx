@@ -813,7 +813,7 @@ class Inflater {
       if( stream.peekByte() == "g".code )
         break;
       var k = unserialize();
-      if( !Std.is(k,String) )
+      if( !(k is String) )
         throw "Invalid object key";
       var v = unserialize();
       Reflect.setField(o,k,v);
