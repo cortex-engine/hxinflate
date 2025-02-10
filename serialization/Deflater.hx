@@ -305,7 +305,7 @@ class Deflater {
     }
     for (i in 0...inflater.tcache.length) {
       var type = inflater.tcache[i];
-      if (type is serialization.InflatedEnum) {
+      if (type is InflatedEnum) {
         var ctype:InflatedEnum = cast type;
         var info = new DeflatedEnum();
         info.name = ctype.name;
